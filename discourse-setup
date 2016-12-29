@@ -54,12 +54,7 @@ check_linux_memory() {
 check_disk_and_memory() {
 
   os_type=$(check_OS)
-  avail_mem=0
-  if [ $os_type == "Darwin" ]; then
-    avail_mem=$(check_osx_memory)
-  else
-    avail_mem=$(check_linux_memory)
-  fi
+  avail_mem=1
 
   if [ "$avail_mem" -lt 1 ]; then
     echo "WARNING: Discourse requires 1GB RAM to run. This system does not appear"
